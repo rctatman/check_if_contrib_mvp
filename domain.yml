@@ -1,0 +1,31 @@
+intents:
+  - bot_challenge
+  - ask_contrib
+
+actions:
+- utter_iamabot
+- action_fetch_info
+- utter_is_contributor
+- utter_is_not_contributor
+
+templates:
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_is_contributor:
+  - text: "Nope, they're not a contributor."
+
+  utter_is_not_contributor:
+  - text: "Yep, they're a contributor!"
+
+slots:
+   is_contributor:
+      type: categorical
+      values:
+      - yes
+      - no
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
